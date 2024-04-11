@@ -167,4 +167,5 @@ MaterialThicknessAttribute As String = "MAT_THICKNESS"
 
 # Thanks
 
-To [NXJournaling.com](https://www.nxjournaling.com/content/easy-material-weight-management-part-1) and [Eng-Tips.com](https://www.eng-tips.com) for providing invaluable examples, insightful comments, and educational content.
+To [NXJournaling.com](https://www.nxjournaling.com/content/easy-material-weight-management-part-1) and [Eng-Tips.com](https://www.eng-tips.com) for providing invaluable examples, insightful comments, and educational content.   
+And to ChatGPT, for advising and debugging the codes alongside me as my constant companion throughout this journey.
