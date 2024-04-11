@@ -82,7 +82,7 @@ Module NXJournal
 
 		' Make all components visible
 		Dim showhide As Integer = theSession.DisplayManager.ShowByType(DisplayManager.ShowHideType.All, DisplayManager.ShowHideScope.AnyInAssembly)
-		workPart.ModelingViews.WorkView.FitAfterShowOrHide(NXOpen.View.ShowOrHideType.ShowOnly)
+		workPart.ModelingViews.WorkView.Fit()
 
 		Try
 			Dim workPart As Part = theSession.Parts.Work
