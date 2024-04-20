@@ -105,9 +105,9 @@ _Example:_
 For a specific assembly labeled "X184-500-101-PanelOne", the first round would involve creating this assembly with an ID of "X184-500-101" and saving it in Teamcenter. This saved ID becomes the reference point for the next numbers to be generated.
 
    - **Round Two:** Using a Substitute to Generate Following Numbers
-In the second round, the journal uses a substitute number to automatically generate subsequent IDs based on the initial number set in the first round. This is where the wildcard substitution becomes a bit of a game. The exact wildcard format can vary; sometimes, just a "*" (star) might work, while other system has a more specific pattern like "-10*" might be necessary to correctly sequence the numbers.   
+In the second round, the journal uses a substitute number to automatically generate subsequent IDs based on the initial number set in the first round. This is where the wildcard substitution becomes a bit of a game. The exact wildcard format can vary; sometimes, just a "\*" (star) might work, while other system has a more specific pattern like "-10*" might be necessary to correctly sequence the numbers.   
 _Example:_
-Continuing from the previous example, after "X184-500-101" is saved, you might try "X184-500-10*" for the next part. Teamcenter recognizes the base ("X184-500-10") and automatically appends the next available sequential number, creating "X184-500-102" for the next component, and so on. It's important to experiment with different wildcard formats to find the one that Teamcenter responds to in your specific setup.
+Continuing from the previous example, after "X184-500-101" is saved, you might try "X184-500-10\*" for the next part. Teamcenter recognizes the base ("X184-500-10") and automatically appends the next available sequential number, creating "X184-500-102" for the next component, and so on. It's important to experiment with different wildcard formats to find the one that Teamcenter responds to in your specific setup.
 
    - **In short:** The first round sets the foundation by saving the initial ID, while the second round leverages this foundation to efficiently generate and manage subsequent IDs using the appropriate wildcard pattern.
 
