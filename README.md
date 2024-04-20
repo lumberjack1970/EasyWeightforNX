@@ -95,13 +95,27 @@ bodytranslucency As Double = 0 ' Set the solid body transparency to 0
 ### Captain Hook's Component Creator ###
 
 **Under the Hood**    
-- The tool searches for the first sequential component, labeled "101". Next, the tool generates the next available component number. These components aren't saved; they are created for you to save if you are satisfied with the outcome. The names for the components will be derived from the names of the solid bodies. If a solid body does not have an assigned name, a default name, “Panel” will be used.
+- Local: The tool searches for the first sequential component labeled "-101". It then generates the next available component number. These components aren't saved; they are created for you to save if you are satisfied with the outcome. The journal searches through your library, session, and memory for the component name you have set, checking for available or missing numbers to avoid duplication. The names for the components will be derived from the names of the solid bodies. If a solid body does not have an assigned name, the default name “Panel” will be used.
+
+- Teamcenter: The tool employs a two-round approach to ensure each component is sequentially numbered and accurately tracked in Teamcenter. You can use both the first and second rounds or only the second, depending on your requirements. See the code for configuration examples.
+
+   - **Round One:** Setting and Saving the Initial ID Number
+In the first round, the journal sets and saves an initial ID number for a component. This is crucial for establishing a base number that Teamcenter can recognize and refer to in subsequent operations. This step essentially anchors the starting point for a sequence of numbers and is necessary to follow a sequential order.   
+_Example:_
+For a specific assembly labeled "X184-500-101-PanelOne", the first round would involve creating this assembly with an ID of "X184-500-101" and saving it in Teamcenter. This saved ID becomes the reference point for the next numbers to be generated.
+
+   - **Round Two:** Using a Substitute to Generate Following Numbers
+In the second round, the journal uses a substitute number to automatically generate subsequent IDs based on the initial number set in the first round. This is where the wildcard substitution becomes a bit of a game. The exact wildcard format can vary; sometimes, just a "*" (star) might work, while other system has a more specific pattern like "-10*" might be necessary to correctly sequence the numbers.   
+_Example:_
+Continuing from the previous example, after "X184-500-101" is saved, you might try "X184-500-10*" for the next part. Teamcenter recognizes the base ("X184-500-10") and automatically appends the next available sequential number, creating "X184-500-102" for the next component, and so on. It's important to experiment with different wildcard formats to find the one that Teamcenter responds to in your specific setup.
+
+   - **In short:** The first round sets the foundation by saving the initial ID, while the second round leverages this foundation to efficiently generate and manage subsequent IDs using the appropriate wildcard pattern.
 
 **Features**
 - Smart Sorting: Leverages EasyWeight or NX's built-in material attributes to organize selected solid bodies by material name and weight in descending order, or retains the order of your initial selection.
 - Unit Support: Offers support for both metric (millimeters) and imperial (inches) units in material names for smart sorting.
 - EasyWeight Integration: For EasyWeight users, the tool updates all weight information before component creation with automatic unit system recognition.
-- Configuration Settings with detailed descriptions at the beginning of the Journal: WaveLink options, flagging created components to avoid duplication and controlling numbering gaps for local environment:
+- Configuration Settings with detailed descriptions at the beginning of the Journal: WaveLink options, flagging created components to avoid duplication, controlling numbering gaps for local environment and Teamcenter option:
 
 ```vbnet
 defaultassemblyid As String = "MyProject-01"
@@ -112,6 +126,7 @@ ssunitin As String = "in"
 EasyWeightsortinglogic As Boolean = True
 defaultsolidbodyname As String = "PANEL"
 setcomponentflag As Boolean = False
+teamcenterIntegrationQST As String = "False"
 fillTheGap As Boolean = True
 ```
 -----
