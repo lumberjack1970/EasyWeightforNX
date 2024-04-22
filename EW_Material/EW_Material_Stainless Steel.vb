@@ -67,7 +67,7 @@ Module NXJournal
 
                     displayModification1.Dispose()
 
-                    DeleteAllAttributes(tempComp)
+                    'DeleteAllAttributes(tempComp)
                     AddBodyAttribute(tempComp, "EW_Material", materialname)
 
                     Dim attributePropertiesBuilder1 As AttributePropertiesBuilder
