@@ -40,7 +40,7 @@ Keeps the body unchanged but removes any weight-related attributes or sets a "Nu
 Using this tool, you can control the visibility of specific solid bodies on your screen using the attributes assigned before. When creating components, it simplifies the process of organizing them. This tool automatically adjusts visibility based on the chosen materials. If no attribute is found, it hides them among the others. "Without Weight" option at the bottom displays all bodies that lack weight information. This allows you to double-check your work.
 
 ### Component Creator
-This tool enables you to automatically create parts locally by requesting you a main component name. For example, "MyProject-01" creates: MyProject-01-101, MyProject-01-102, etc. Select solid bodies to create components for.
+This tool enables you to automatically create parts by requesting you a main component name. For example, "MyProject-01" creates: MyProject-01-101, MyProject-01-102, etc. Select solid bodies to create components for.
 
 ### Component Weight Transfer
 In the Modeling environment/Main Assembly, this journal transfers weight information (weight attribute - EW_Body_Weight) from solid bodies to components. Summarizes all component weights to assign a Total Assembly Weight attribute to the Main Assembly, excluding weights of underlying components. To be used exclusively with the original - EW_Material_12mm Plywood. When you assign one of NX's built-in materials, this function occurs natively.
