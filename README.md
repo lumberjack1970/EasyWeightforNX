@@ -95,7 +95,7 @@ bodytranslucency As Double = 0 ' Set the solid body transparency to 0
 ### Captain Hook's Component Creator ###
 
 **Under the Hood**    
-- Local: The tool creates the first sequential component labeled "-101". It then generates the next available component number. These components aren't saved; they are created for you to save if you are satisfied with the outcome. The journal searches through your library, session, and memory for the component name you have set, checking for available or missing numbers to avoid duplication. The names for the components will be derived from the names of the solid bodies. If a solid body does not have an assigned name, the default name “Panel” will be used.
+- Local: The tool creates the first sequential component labeled "-101". It then generates the next available number. These components aren't saved; they are created for you to save if you are satisfied with the outcome. The journal searches through your library, session, and memory for the component name you have set, checking for available or missing numbers to avoid duplication. The names for the components will be derived from the names of the solid bodies. If a solid body does not have an assigned name, the default name “Panel” will be used.
 
 - Teamcenter: The tool employs a two-round approach to ensure each component is sequentially numbered and accurately tracked in Teamcenter. You can use both the first and second rounds or only the second, depending on your requirements. See the code for configuration examples.
 
@@ -175,6 +175,23 @@ MaterialThicknessAttribute As String = "MAT_THICKNESS"
 <td width="25%" style="text-align: center"><img src="https://github.com/lumberjack1970/EasyWeightforNX/assets/164236127/4a817b51-a180-491f-b76e-772ec76851de"></td>
 </tr>
 </table>
+
+-----
+
+### Layer Quick Switch Journal
+Originally designed to act as a toggle switch, but it became an impossible mission after numerous failed attempts to make it work.   
+As a result, two journals were created: one for 'on' and one for 'off'. It can handle multiple layers though.
+
+```vbnet
+Dim layerNumbers As Integer() = {1, 70, 90}  ' Add or remove layer numbers as needed, separate with coma
+Dim layerState As NXOpen.Layer.State = NXOpen.Layer.State.Hidden  ' Can be set to Visible or Hidden
+```
+
+### Drafting View Border On / Off Journal
+Created, because it was a consistent struggle to locate the drawing border when I hovered my mouse.   
+You can find this function under Drafting preferences / View / Workflow / Border.
+
+-----
 
 # Thanks
 
