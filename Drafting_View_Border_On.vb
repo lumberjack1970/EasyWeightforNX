@@ -1,4 +1,10 @@
-﻿Imports System
+' Written by Tamas Woller - October 2023
+' Journal desciption: Display Drafting View Border
+' Shared on NXJournaling.com
+' Written in VB.Net
+' Tested on Siemens NX 2212 and 2306, Native and Teamcenter 13
+
+Imports System
 Imports NXOpen
 
 Module NXJournal
@@ -9,7 +15,7 @@ Module NXJournal
 
         ' Create a starting mark for undo 
         Dim markId1 As NXOpen.Session.UndoMarkId
-        markId1 = theSession.SetUndoMark(NXOpen.Session.MarkVisibility.Visible, "Drafting View Border")
+        markId1 = theSession.SetUndoMark(NXOpen.Session.MarkVisibility.Visible, "Start")
 
         ' Create PreferencesBuilder to set preferences
         Dim preferencesBuilder1 As NXOpen.Drafting.PreferencesBuilder
