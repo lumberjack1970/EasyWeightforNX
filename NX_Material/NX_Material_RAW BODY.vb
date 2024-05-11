@@ -106,7 +106,7 @@ Module NXJournal
                             'lw.WriteLine("Material already loaded.")
                         End If
                     Catch ex As Exception
-                        'lw.WriteLine("Failed to check/load material library: " & ex.Message)
+                        lw.WriteLine("Failed to check/load material library: " & ex.Message)
                     End Try
 
                     ' Apply display and material changes
