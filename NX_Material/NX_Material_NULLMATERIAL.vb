@@ -66,7 +66,7 @@ Module NXJournal
 					'lw.WriteLine("Material already loaded.")
 				End If
 			Catch ex As Exception
-				'lw.WriteLine("Failed to check/load material library: " & ex.Message)
+				lw.WriteLine("Failed to check/load material library: " & ex.Message)
 			End Try
 
 			If SelectObjects("Hey, select multiple somethings", mySelectedObjects) = Selection.Response.Ok Then
