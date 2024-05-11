@@ -95,7 +95,7 @@ Module NXJournal
                     massUnits(1) = workPart.UnitCollection.GetBase("Volume")
                     Dim mb As MeasureBodies = myMeasure.NewMassProperties(massUnits, 0.99, {tempComp})
 
-                    ' Create or update an attribute named 'SS_Body_Weight' and assign the weight value to it
+                    ' Create or update an attribute named 'EW_Body_Weight' and assign the weight value to it
                     Dim attributePropertiesBuilderForWeight As AttributePropertiesBuilder
                     attributePropertiesBuilderForWeight = theSession.AttributeManager.CreateAttributePropertiesBuilder(workPart, {tempComp}, AttributePropertiesBuilder.OperationType.Create)
 
