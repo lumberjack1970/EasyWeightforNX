@@ -65,21 +65,63 @@ Automates dimensions - Lenght, Width and Material thickness in components for al
 
 # Detailed Information and Configuration Settings
 
-### Material Journal
+### Material Journals
 
 * **Which should you use** - _EW_Material_12mm Plywood.vb_ **or** _NX_Material_12mm Plywood.vb_**?**
 
 It's important to understand that the Easyweight project originated from a straightforward concept: circumventing NX's limitations when using it without a material license, allowing for body modifications and the assignment of a material name. As the project evolved, I discovered that it was also possible to assign built-in materials, presenting you with two options. Ideally, I should deprecate the first one, but I've chosen to keep it because it represents the original concept — and I love its simple and elegant solution to such limitations. The choice is ultimately yours, but I encourage you to develop your own built-in material library and use the second - **associative** - option. Every subsequent journal is prepared to accept either one or has an alternative.
 
+####  - EW_Material_12mm Plywood.vb
+
+How to use:
+
+1. Create a Journal for Each Material    
+Save as and start editing. At the beginning of the code, where the Configuration Settings appear, enter your desired material details:
+
 ```vbnet
-materialname As String = "12mm Plywood"
+Configuration Code Snippets:
+
+materialName As String = "12mm Plywood"
 density As Double = 440 ' Kg/m3 or Pound/Cubic Foot
-unitsystem As String = "kg"
-bodycolor As Double = 111 ' Set the solid body color to ID: 111
-bodylayer As Double = 1 ' Set the solid body to layer 1
-bodytranslucency As Double = 0 ' Set the solid body transparency to 0
+unitSystem As String = "kg"
+bodyColor As Double = 111 ' Set the solid body color to ID: 111
+bodyLayer As Double = 1 ' Set the solid body to layer 1
+bodyTranslucency As Double = 0 ' Set the solid body transparency to 0
 ```
 
+2. Customize Your Ribbon with Buttons as [described earlier](#how-to-use)    
+Create custom icons using the colors you’ve chosen for better visual recognition.
+
+####  - NX_Material_12mm Plywood.vb
+
+How to use:
+
+1. Create a New Material Library    
+Search the internet for "How to Create a New UG NX Material Library". Familiarize yourself with the following:
+   - Copy, create and modify materials with the "Assign Materials" function.
+   - Export materials to a library and save it as an *.xml file.
+
+2. Establish Your Color System in NX    
+Navigate to **Menu → Preferences → Color Palette**.    
+Hover your mouse over any color to see its ID number, which you'll need later.
+
+3. Create a Journal for Each Material    
+Save as and start editing. At the beginning of the code, where the Configuration Settings appear, fill in the data you've previously gathered:
+
+```vbnet
+Configuration Code Snippets:
+
+materialName As String = "12mm Plywood"
+materialLibraryPath As String = "C:\Your Folder\To your material library\physicalmateriallibrary_custom.xml"
+bodyColor As Double = 111
+bodyLayer As Double = 1
+bodyTranslucency As Double = 0
+```
+
+4. Customize Your Ribbon with Buttons as [described earlier](#how-to-use)    
+Create custom icons using the colors you’ve chosen for better visual recognition.
+
+##
 |  Available Journals      | _EW_Material_12mm Plywood.vb_ | _NX_Material_12mm Plywood.vb_ |
 |:-------------------------|:-----------------------------:|:-----------------------------:|
 | Face Material | Yes | Yes |
@@ -114,14 +156,16 @@ Continuing from the previous example, after "X184-500-101" is saved, you might t
 - Configuration Settings with detailed descriptions at the beginning of the Journal: WaveLink options, flagging created components to avoid duplication, controlling numbering gaps for local environment and Teamcenter option:
 
 ```vbnet
-defaultassemblyid As String = "MyProject-01"
-wavelinkfeature As Boolean = True
-smartsortingfeatureQST As String = "Maybe"
-ssunitmm As String = "mm"
-ssunitin As String = "in"
+Configuration Code Snippets:
+
+defaultAssemblyid As String = "MyProject-01"
+wavelinkFeature As Boolean = True
+smartsortingFeatureQST As String = "Maybe"
+ssUnitmm As String = "mm"
+ssUnitin As String = "in"
 EasyWeightsortinglogic As Boolean = True
-defaultsolidbodyname As String = "PANEL"
-setcomponentflag As Boolean = False
+defaultSolidbodyname As String = "PANEL"
+setComponentflag As Boolean = False
 teamcenterIntegrationQST As String = "False"
 fillTheGap As Boolean = True
 ```
@@ -148,12 +192,14 @@ fillTheGap As Boolean = True
 - Configuration Settings with detailed descriptions at the beginning of the Journal:
 
 ```vbnet
+Configuration Code Snippets:
+
 validThicknesses As Double() = {0.141, 0.203, 0.25, 0.453, 0.469, 0.709, 0.827, 6, 9, 12, 13, 15, 18, 19}
 decimalFormat As String = "F1"
 roundToNearestHalfBLN As Boolean = True
 modificationsQST As String = "Maybe"
-materialthicknessadjust As Boolean = True
-trimzeros As Boolean = True
+materialThicknessadjust As Boolean = True
+trimZeros As Boolean = True
 LengthAttribute As String = "DIM_LENGTH"
 WidthAttribute As String = "DIM_WIDTH"
 MaterialThicknessAttribute As String = "MAT_THICKNESS"
@@ -183,8 +229,10 @@ Originally designed to act as a toggle switch, but it became an impossible missi
 As a result, two journals were created: one for 'on' and one for 'off'. It can handle multiple layers though.
 
 ```vbnet
-Dim layerNumbers As Integer() = {1, 70, 90}  ' Add or remove layer numbers as needed, separate with coma
-Dim layerState As NXOpen.Layer.State = NXOpen.Layer.State.Hidden  ' Can be set to Visible or Hidden
+Configuration Code Snippets:
+
+layerNumbers As Integer() = {1, 70, 90}  ' Add or remove layer numbers as needed, separate with coma
+layerState As NXOpen.Layer.State = NXOpen.Layer.State.Hidden  ' Can be set to Visible or Hidden
 ```
 
 ### Drafting View Border On / Off Journal
