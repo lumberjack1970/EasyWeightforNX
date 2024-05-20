@@ -39,8 +39,8 @@ Keeps the body unchanged but removes any weight-related attributes or sets a "Nu
 ### Solid Body Material Filter Tool
 Using this tool, you can control the visibility of specific solid bodies on your screen using the attributes assigned before. When creating components, it simplifies the process of organizing them. This tool automatically adjusts visibility based on the chosen materials. If no attribute is found, it hides them among the others. "Without Weight" option at the bottom displays all bodies that lack weight information. This allows you to double-check your work.
 
-### Component Creator
-This tool enables you to automatically create parts by requesting you a main component name. For example, "MyProject-01" creates: MyProject-01-101, MyProject-01-102, etc. Select solid bodies to create components for.
+### Component Creator 
+This tool enables you to automatically create parts by requesting you a main component name. For example, "MyProject-01" creates: MyProject-01-101, MyProject-01-102, etc. Select solid bodies to create components for. [Details](#captain_hook's_component_creator)    
 
 ### Component Weight Transfer
 In the Modeling environment/Main Assembly, this journal transfers weight information (weight attribute - EW_Body_Weight) from solid bodies to components. Summarizes all component weights to assign a Total Assembly Weight attribute to the Main Assembly, excluding weights of underlying components. To be used exclusively with the original - EW_Material_12mm Plywood. When you assign one of NX's built-in materials, this function occurs natively.
@@ -52,6 +52,7 @@ In the Drafting environment, sums all solid body weights for a Total Built-in We
 
 ## Dimensions Tool
 Automates dimensions - Lenght, Width and Material thickness in components for aligned and non-aligned solid bodies. 
+[Details](#lord_voldemort's_dimensions_tool_-_length,_width_and_material_thickness)    
 
 -----
 
@@ -71,9 +72,9 @@ Automates dimensions - Lenght, Width and Material thickness in components for al
 
 It's important to understand that the Easyweight project originated from a straightforward concept: circumventing NX's limitations when using it without a material license, allowing for body modifications and the assignment of a material name. As the project evolved, I discovered that it was also possible to assign built-in materials, presenting you with two options. Ideally, I should deprecate the first one, but I've chosen to keep it because it represents the original concept — and I love its simple and elegant solution to such limitations. The choice is ultimately yours, but I encourage you to develop your own built-in material library and use the second - **associative** - option. Every subsequent journal is prepared to accept either one or has an alternative.
 
-####  - EW_Material_12mm Plywood.vb
+* **EW_Material_12mm Plywood.vb**
 
-How to use:
+  How to use:
 
 1. Create a Journal for Each Material    
 Save as and start editing. At the beginning of the code, where the Configuration Settings appear, enter your desired material details:
@@ -92,9 +93,9 @@ bodyTranslucency As Double = 0 ' Set the solid body transparency to 0
 2. Customize Your Ribbon with Buttons as [described earlier](#how-to-use)    
 Create custom icons using the colors you’ve chosen for better visual recognition.
 
-####  - NX_Material_12mm Plywood.vb
+* **NX_Material_12mm Plywood.vb**
 
-How to use:
+  How to use:
 
 1. Create a New Material Library    
 Search the internet for "How to Create a New UG NX Material Library". Familiarize yourself with the following:
@@ -134,7 +135,7 @@ Create custom icons using the colors you’ve chosen for better visual recogniti
 | Dimensions Tool | Not Related | Not Related |
 
 -----
-### Captain Hook's Component Creator ###
+### Captain Hook's Component Creator
 
 **Under the Hood**    
 - Local: The tool creates the first sequential component labeled "-101". It then generates the next available number. These components aren't saved; they are created for you to save if you are satisfied with the outcome. The journal searches through your library, session, and memory for the component name you have set, checking for available or missing numbers to avoid duplication. The names for the components will be derived from the names of the solid bodies. If a solid body does not have an assigned name, the default name “Panel” will be used.
