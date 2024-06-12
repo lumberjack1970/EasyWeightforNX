@@ -70,12 +70,16 @@ Automates dimensions - Lenght, Width and Material thickness in components for al
 * **Which should you use** - _EW_Material_12mm Plywood.vb_ **or** _NX_Material_12mm Plywood.vb_**?**
 
 It's important to understand that the Easyweight project originated from a straightforward concept: circumventing NX's limitations when using it without a material license, allowing for body modifications and the assignment of a material name. As the project evolved, I discovered that it was also possible to assign built-in materials, presenting you with two options. Ideally, I should deprecate the first one, but I've chosen to keep it because it represents the original concept — and I love its simple and elegant solution to such limitations. The choice is ultimately yours, but I encourage you to develop your own built-in material library and use the second - **associative** - option. Every subsequent journal is prepared to accept either one or has an alternative.
-
-* **EW_Material_12mm Plywood.vb**
+                           
+### EW_Material_12mm Plywood.vb
 
   How to use:
 
-1. Create a Journal for Each Material    
+1. Establish Your Color System in NX    
+Navigate to **Menu → Preferences → Color Palette**.    
+Hover your mouse over any color to see its ID number, which you'll need later.
+
+2. Create a Journal for Each Material    
 Save as and start editing. At the beginning of the code, where the Configuration Settings appear, enter your desired material details:
 
 ```vbnet
@@ -89,15 +93,15 @@ bodyLayer As Double = 1 ' Set the solid body to layer 1
 bodyTranslucency As Double = 0 ' Set the solid body transparency to 0
 ```
 
-2. Customize Your Ribbon with Buttons as [described earlier](#how-to-use)    
+3. Customize Your Ribbon with Buttons as [described earlier](#how-to-use)    
 Create custom icons using the colors you’ve chosen for better visual recognition.
-
-* **NX_Material_12mm Plywood.vb**
+                    
+### NX_Material_12mm Plywood.vb
 
   How to use:
 
 1. Create a New Material Library    
-Search the internet for "How to Create a New UG NX Material Library". Familiarize yourself with the following:
+Search the internet for "How to Create a New UG NX Material Library". Familiarize yourself with the following and create your own library as you like:
    - Copy, create and modify materials with the "Assign Materials" function.
    - Export materials to a library and save it as an *.xml file.
 
@@ -137,7 +141,7 @@ Create custom icons using the colors you’ve chosen for better visual recogniti
 ### Captain Hook's Component Creator
 
 **Under the Hood**    
-- Local: The tool creates the first sequential component labeled "-101". It then generates the next available number. These components aren't saved; they are created for you to save if you are satisfied with the outcome. The journal searches through your library, session, and memory for the component name you have set, checking for available or missing numbers to avoid duplication. The names for the components will be derived from the names of the solid bodies. If a solid body does not have an assigned name, the default name “Panel” will be used.
+- Local: The tool creates the first sequential component labeled "-101". It then generates the next available number. These components aren't saved; they are created for you to save if you are satisfied with the outcome. The journal searches through your library, session, and memory for the component name you have set, checking for available or missing numbers to avoid duplication. The names for the components will be created from the names of the solid bodies. If a solid body does not have anything assigned, the default name “Panel” will be used. You can change this later in the code. See the Guide folder for screenshots on how to rename your solid bodies.
 
 - Teamcenter: The tool employs a two-round approach to ensure each component is sequentially numbered and accurately tracked in Teamcenter. You can use both the first and second rounds or only the second, depending on your requirements. See the code for configuration examples.
 
@@ -217,7 +221,7 @@ MaterialThicknessAttribute As String = "MAT_THICKNESS"
 <td width="25%" style="text-align: center">Dimensions Tool</td>
 </tr>
 <tr>
-<td width="25%" style="text-align: center"><img src="https://github.com/lumberjack1970/EasyWeightforNX/assets/164236127/b3a5286c-b0ed-4715-8379-24f276c1ab16"></td>
+<td width="25%" style="text-align: center"><img src="https://github.com/lumberjack1970/EasyWeightforNX/assets/164236127/2c3241b0-9773-48d6-8fa6-06fb0ee53497"></td>
 <td width="25%" style="text-align: center"><img src="https://github.com/lumberjack1970/EasyWeightforNX/assets/164236127/4a817b51-a180-491f-b76e-772ec76851de"></td>
 </tr>
 </table>
