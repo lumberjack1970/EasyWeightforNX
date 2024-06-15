@@ -70,6 +70,9 @@ Module NXJournal
 
 	' Flag Created Components - To prevent duplicating efforts, this option tags processed solid bodies with a 'Component created' attribute. It's an efficient way to track which bodies have already been processed.
 	' If you wan't to override this later, simply delete the value of this attribute in Solid body / Properties. - True or False
+	' Only for EasyWeight users - When you use EW_Material or NX_Material journal, it automatically adds an empty 'Component created' attribute to solid bodies, addressing a discovered issue in version 1.01.
+	' The issue arises during modeling, particularly when occurrences are created (for example, mirroring a body in NX results in an 'original' solid and a new 'occurrence'). These occurrences inherit the original attributes, including the flags set during component creation. To resolve this, modifications were made to the component creator journals and the material journal. These changes ensure the assignment of a base attribute, which can then be effectively managed in both instances.
+	' If you have a proper Material licence, and want to use this journal with this function, you can go around the mentioned issue by assigning the attribute to all your solids at first. Select all Solid Body / Properties / New Attribute / Title: Component created, Data Type: String. A more efficient way would be to change your default model template to have this.
 	Dim setcomponentflag As Boolean = False
 
 	' Control Numbering Gaps - Only for Local - This feature enables intelligent handling of component numbering. For instance, if you initially create components numbered 101, 102, 103, 104, and 105, but later delete 101 and 103, activating this option will prioritize filling these gaps with new components before proceeding to increment the numbers. It's an efficient method to maintain a continuous sequence and optimize the utilization of available numbers.
