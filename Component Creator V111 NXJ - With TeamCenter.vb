@@ -72,7 +72,10 @@ Module NXJournal
 	Dim defaultsolidbodyname As String = "PANEL"
 
 	' Flag Created Components - To prevent duplicating efforts, this option tags processed solid bodies with a 'Component created' attribute. It's an efficient way to track which bodies have already been processed.
-	' If you want to override this later, simply delete the value of this attribute in Solid body / Properties. - True or False
+	' If you wan't to override this later, simply delete the value of this attribute in Solid body / Properties. - True or False
+	' Only for EasyWeight users - When you use EW_Material or NX_Material journal, it automatically adds an empty 'Component created' attribute to solid bodies, addressing a discovered issue in version 1.01.
+	' The issue arises during modeling, particularly when occurrences are created (for example, mirroring a body in NX results in an 'original' solid and a new 'occurrence'). These occurrences inherit the original attributes, including the flags set during component creation. To resolve this, modifications were made to the component creator journals and the material journal. These changes ensure the assignment of a base attribute, which can then be effectively managed in both instances.
+	' If you have a proper Material licence, and want to use this journal with this function, you can go around the mentioned issue by assigning the attribute to all your solids at first. Select all Solid Body / Properties / New Attribute / Title: Component created, Data Type: String. A more efficient way would be to change your default model template to have this.
 	Dim setcomponentflag As Boolean = False
 
 	' Teamcenter Integration Settings - Determines whether the journal operates locally "False" or integrates with Teamcenter. Selecting "Maybe" prompts a question at the start to finalize this setting, tailoring the journal to your specific workflow needs. - "True", "False" or "Maybe".
