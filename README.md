@@ -157,7 +157,8 @@ Continuing from the previous example, after "X184-500-101" is saved, you might t
 - Smart Sorting: Leverages EasyWeight or NX's built-in material attributes to organize selected solid bodies by material name and weight in descending order, or retains the order of your initial selection.
 - Unit Support: Offers support for both metric (millimeters) and imperial (inches) units in material names for smart sorting.
 - EasyWeight Integration: For EasyWeight users, the tool updates all weight information before component creation with automatic unit system recognition.
-- Configuration Settings with detailed descriptions at the beginning of the Journal: WaveLink options, flagging created components to avoid duplication, controlling numbering gaps for local environment and Teamcenter option:
+- Flag created components to avoid duplication: Only for EasyWeight users as the material journal adds an empty 'Component created' attribute to solid bodies. If you have a proper Material licence, and want to use this journal with this function, you have to assign the attribute to all your solids first. Select all Solid Body / Properties / New Attribute / Title: Component created, Data Type: String. A more efficient way would be to change your default model template to have this. See the code for a detailed comment about the issue.
+- Configuration Settings with detailed descriptions at the beginning of the Journal: WaveLink options, controlling numbering gaps, local environment and Teamcenter option:
 
 ```vbnet
 Configuration Code Snippets:
