@@ -240,6 +240,9 @@ layerNumbers As Integer() = {1, 70, 90}  ' Add or remove layer numbers as needed
 layerState As NXOpen.Layer.State = NXOpen.Layer.State.Hidden  ' Can be set to Visible or Hidden
 ```
 
+### Construction Objects Visibility
+This enhanced version of the previous Layer Quick Switch Journal allows you to easily toggle the visibility of various construction objects, including Sketches, Curves, Datums, Routing, Assembly Constraints, and Layers. It provides separate settings to manage which objects need to be visible and which need to be hidden.
+
 ### Drafting View Border On / Off Journal
 Created, because it was a consistent struggle to locate the drawing border when I hovered my mouse.   
 You can find this function under Drafting preferences / View / Workflow / Border.
