@@ -121,7 +121,7 @@ Module NXJournal
 	Dim tcRelationType As String = "master"
 	Dim tcTemplatePresentationName As String = "Model"
 	Dim tcItemType As String = "Item"
-	Dim assemblyidQST As Boolean = False
+	Dim assemblyidQST As Boolean = True
 	Dim tcwithtworounds as Boolean = True
 	Dim tcfirstround as String = "-101"
 	Dim tcsecondround as String = "-10*"
@@ -131,7 +131,7 @@ Module NXJournal
 	Dim llUnits As NXOpen.Part.Units = NXOpen.Part.Units.Millimeters
 	Dim llTemplatePresentationName As String = "Model"
 	Dim lldefaultdirectoryPath As String = "C:\NXPartsFolder\"
-    Dim llnextAvailableId As Integer = 101
+    	Dim llnextAvailableId As Integer = 101
 
 	' WaveLink Settings
 	Dim wlAssociative As Boolean = True
