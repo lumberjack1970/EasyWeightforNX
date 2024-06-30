@@ -11,7 +11,7 @@ I recommend using Notepad++ or Visual Studio Code. To design icons, Krita is an 
 https://notepad-plus-plus.org/    
 https://krita.org/    
 
-1. Open any journal for editing. Be brave, they are all in plain English with comments on the know-how.
+1. Open any journal for editing. Don't worry, they are all in plain english with many comments on the know-how.
 2. At the beginning, you'll find a section labeled 'Configuration settings'.
 3. These settings allow you to easily change the main features without diving into the code. (Only modify the code directly if you really know what you're doing and couldn't find what you need.)
    
@@ -60,13 +60,16 @@ In the Modeling environment/Main Assembly, this journal transfers weight informa
 ### Total Weight to Drawings
 In the Drafting environment, sums all solid body weights for a Total Built-in Weight and adds Raw body differences for a Total Environmental Weight in the title block. Does not require Component Weight Transfer Journal.
 
------
-
-> [!IMPORTANT]
->  For EasyWeight (**EW_Material_12mm Plywood.vb**) users:
-> - Weight is calculated during the Material Journal to a solid body.
-> - Journals are not associative. Any geometry changes require Journal reapplication.
-> - Component Creator updates all relevant EasyWeight information by default.
+##      
+|  Available Journals      | _EW_Material_12mm Plywood.vb_ | _NX_Material_12mm Plywood.vb_ |
+|:-------------------------|:-----------------------------:|:-----------------------------:|
+| Face Material | Yes | Yes |
+| Raw Body | EW_Material_RAW BODY.vb | NX_Material_RAW BODY.vb |
+| Delete Attributes | EW_Material_DELETE ATTRIBUTES.vb | NX_Material_NULLMATERIAL.vb |
+| Solid Body Material Filter | EW_Material Filter | NX_Material Filter |
+| Component Creator | Yes - See Code to Setup | Yes - See Code to Setup |
+| Component Weight Transfer | Yes | Not Applicable |
+| Total Weight to Drawings | EW_Total Weight to Drawing | NX_Total Weight to Drawing |
 
 ---
 
@@ -92,6 +95,8 @@ This enhanced version of the previous Layer Quick Switch Journal allows you to e
 ### Drafting View Border On / Off Journal
 Created, because it was a consistent struggle to locate the drawing border when I hovered my mouse.   
 You can find this function under Drafting preferences / View / Workflow / Border.
+
+---
 
 # Detailed Information and Configuration Settings
 
@@ -125,7 +130,14 @@ bodyTranslucency As Double = 0 ' Set the solid body transparency to 0
 
 3. Customize Your Ribbon with Buttons as [described earlier](#how-to-use)    
 Create custom icons using the colors you’ve chosen for better visual recognition.
-                    
+
+> [!IMPORTANT]
+> - Weight is calculated during the Material Journal to a solid body.
+> - Journals are not associative. Any geometry changes require Journal reapplication.
+> - Component Creator updates all relevant EasyWeight information by default.
+
+##
+
 ### NX_Material_12mm Plywood.vb
 
   How to use:
@@ -154,18 +166,6 @@ bodyTranslucency As Double = 0
 
 4. Customize Your Ribbon with Buttons as [described earlier](#how-to-use)    
 Create custom icons using the colors you’ve chosen for better visual recognition.
-
-##
-|  Available Journals      | _EW_Material_12mm Plywood.vb_ | _NX_Material_12mm Plywood.vb_ |
-|:-------------------------|:-----------------------------:|:-----------------------------:|
-| Face Material | Yes | Yes |
-| Raw Body | EW_Material_RAW BODY.vb | NX_Material_RAW BODY.vb |
-| Delete Attributes | EW_Material_DELETE ATTRIBUTES.vb | NX_Material_NULLMATERIAL.vb |
-| Solid Body Material Filter | EW_Material Filter | NX_Material Filter |
-| Component Creator | Yes - See Code to Setup | Yes - See Code to Setup |
-| Component Weight Transfer | Yes | Not Applicable |
-| Total Weight to Drawings | EW_Total Weight to Drawing | NX_Total Weight to Drawing |
-| Dimensions Tool | Not Related | Not Related |
 
 -----
 ### Captain Hook's Component Creator
