@@ -6,9 +6,20 @@ an NX Study for Joinery Designers and others: Mastering Weight Management throug
 
 ## How to use
 
-Every journal can be easily customized to meet your preferences. For editing, I recommend using Notepad++ or Visual Studio Code. To design icons, Krita is an excellent choice.    
+Every journal can be easily customized to meet your preferences.    
+I recommend using Notepad++ or Visual Studio Code. To design icons, Krita is an excellent choice. (any of these are free)    
 https://notepad-plus-plus.org/    
 https://krita.org/    
+
+1. Open any journal for editing. Be brave, they are all in plain English with comments on the know-how.
+2. At the beginning, you'll find a section labeled 'Configuration settings'.
+3. These settings allow you to easily change the main features without diving into the code. (Only modify the code directly if you really know what you're doing and couldn't find what you need.)
+   
+Simply adjust the settings as needed:
+
+- Use 'true' for yes/on
+- Use 'false' for no/off
+- For specific settings, you'll find an explanation on how to set them up
 
 To create custom buttons, follow these simplified steps:
 
@@ -25,7 +36,7 @@ I created several versions of the Material Journal and placed them on the ribbon
 
    - _EW_Material_12mm Plywood.vb_: Changes body color, layer and transparency, sets a density value, measures volume, calculates weight, and attributes it: EW_Material, EW_Material_Density and EW_Body_Weight.
 
-   - _NX_Material_12mm Plywood.vb_: Changes body color, layer and transparency and sets an NX's built in material. You have to create your own Material Library **- physicalmateriallibrary.xml -** to use this. See below for further details. 
+   - _NX_Material_12mm Plywood.vb_: Changes body color, layer and transparency and sets an NX's built in material. You have to create your own Material Library **- physicalmateriallibrary.xml -** to use this. See below for further details.
 
 2. **Face Material Journal** - _EW_Material_FACE_Inside.vb_:  
 Alters the color of selected faces. Has priority over the main Material Journal. Used to distinguish the inside/outside of the body.
@@ -38,9 +49,10 @@ Keeps the body unchanged but removes any weight-related attributes or sets a "Nu
 
 ### Solid Body Material Filter Tool
 Using this tool, you can control the visibility of specific solid bodies on your screen using the attributes assigned before. When creating components, it simplifies the process of organizing them. This tool automatically adjusts visibility based on the chosen materials. If no attribute is found, it hides them among the others. "Without Weight" option at the bottom displays all bodies that lack weight information. This allows you to double-check your work.
+This journal needs setup like the others too. Have all your materials ready to fill up its database, so it will know what to look for. You will probably need to tailor the window size, which you can find at the end of the journal. I've left comments for you to know which numbers need to be changed.
 
 ### Component Creator 
-This tool enables you to automatically create parts by requesting you a main component name. For example, "MyProject-01" creates: MyProject-01-101, MyProject-01-102, etc. Select solid bodies to create components for.   
+This tool enables you to automatically create parts by requesting you a main component name. For example, "MyProject-01" creates: MyProject-01-101-Top Panel, MyProject-01-102-Shelf, etc. Select solid bodies to create components for. See below for further details.   
 
 ### Component Weight Transfer
 In the Modeling environment/Main Assembly, this journal transfers weight information (weight attribute - EW_Body_Weight) from solid bodies to components. Summarizes all component weights to assign a Total Assembly Weight attribute to the Main Assembly, excluding weights of underlying components. To be used exclusively with the original - EW_Material_12mm Plywood. When you assign one of NX's built-in materials, this function occurs natively.
@@ -48,20 +60,38 @@ In the Modeling environment/Main Assembly, this journal transfers weight informa
 ### Total Weight to Drawings
 In the Drafting environment, sums all solid body weights for a Total Built-in Weight and adds Raw body differences for a Total Environmental Weight in the title block. Does not require Component Weight Transfer Journal.
 
-...And an additional journal to get you through the day, which are not related to 'weight':
-
-## Dimensions Tool
-Automates dimensions - Lenght, Width and Material thickness in components for aligned and non-aligned solid bodies.     
-
 -----
 
 > [!IMPORTANT]
->  For EasyWeight users:
+>  For EasyWeight (**EW_Material_12mm Plywood.vb**) users:
 > - Weight is calculated during the Material Journal to a solid body.
 > - Journals are not associative. Any geometry changes require Journal reapplication.
 > - Component Creator updates all relevant EasyWeight information by default.
 
 ---
+
+## ...And some additional journals to get you through the day
+
+### Dimensions Tool
+Automates dimensions - Lenght, Width and Material thickness in components for aligned and non-aligned solid bodies. See below for further details.           
+
+### Layer Quick Switch Journal
+Originally designed to act as a toggle switch, but it became an impossible mission after numerous failed attempts to make it work.   
+As a result, two journals were created: one for 'on' and one for 'off'. It can handle multiple layers though.
+
+```vbnet
+Configuration Code Snippets:
+
+layerNumbers As Integer() = {1, 70, 90}  ' Add or remove layer numbers as needed, separate with coma
+layerState As NXOpen.Layer.State = NXOpen.Layer.State.Hidden  ' Can be set to Visible or Hidden
+```
+
+### Construction Objects Visibility Journal
+This enhanced version of the previous Layer Quick Switch Journal allows you to easily toggle the visibility of various construction objects, including Sketches, Curves, Datums, Routing, Assembly Constraints, and Layers. It provides separate settings to manage which objects need to be visible and which need to be hidden.
+
+### Drafting View Border On / Off Journal
+Created, because it was a consistent struggle to locate the drawing border when I hovered my mouse.   
+You can find this function under Drafting preferences / View / Workflow / Border.
 
 # Detailed Information and Configuration Settings
 
@@ -229,27 +259,7 @@ MaterialThicknessAttribute As String = "MAT_THICKNESS"
 
 -----
 
-### Layer Quick Switch Journal
-Originally designed to act as a toggle switch, but it became an impossible mission after numerous failed attempts to make it work.   
-As a result, two journals were created: one for 'on' and one for 'off'. It can handle multiple layers though.
-
-```vbnet
-Configuration Code Snippets:
-
-layerNumbers As Integer() = {1, 70, 90}  ' Add or remove layer numbers as needed, separate with coma
-layerState As NXOpen.Layer.State = NXOpen.Layer.State.Hidden  ' Can be set to Visible or Hidden
-```
-
-### Construction Objects Visibility
-This enhanced version of the previous Layer Quick Switch Journal allows you to easily toggle the visibility of various construction objects, including Sketches, Curves, Datums, Routing, Assembly Constraints, and Layers. It provides separate settings to manage which objects need to be visible and which need to be hidden.
-
-### Drafting View Border On / Off Journal
-Created, because it was a consistent struggle to locate the drawing border when I hovered my mouse.   
-You can find this function under Drafting preferences / View / Workflow / Border.
-
------
-
 # Thanks
 
-To [NXJournaling.com](https://www.nxjournaling.com/content/easy-material-weight-management-part-1) and [Eng-Tips.com](https://www.eng-tips.com/viewthread.cfm?qid=514995) for providing invaluable examples, insightful comments, and educational content.   
+To [NXJournaling.com](https://www.nxjournaling.com/content/easy-material-weight-management-part-1) and [Eng-Tips.com](https://www.eng-tips.com/viewthread.cfm?qid=514995) [2](https://www.eng-tips.com/viewthread.cfm?qid=516555) [3](https://www.eng-tips.com/viewthread.cfm?qid=518413) for providing invaluable examples, insightful comments, and educational content.   
 And to ChatGPT, for advising and debugging the codes alongside me as my constant companion throughout this journey.
