@@ -17,9 +17,9 @@ https://krita.org/
    
 Simply adjust the settings as needed:
 
-- Use 'true' for yes/on
-- Use 'false' for no/off
-- For specific settings, you'll find an explanation on how to set them up
+- Use 'True' for yes/on
+- Use 'False' for no/off
+- For specific settings, you'll find an explanation on how to set them up at every section.
 
 To create custom buttons, follow these simplified steps:
 
