@@ -304,7 +304,7 @@ If you want to handle them in the graphics window:
 
 That's all, young Padawans.     
 Let this wisdom guide you well on your path to mastery.    
-**And...May the Force be with you!**
+**May the Force be with you all!**
 
 -----
 
