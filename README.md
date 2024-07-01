@@ -171,7 +171,7 @@ Create custom icons using the colors you’ve chosen for better visual recogniti
 ### Captain Hook's Component Creator
 
 **Under the Hood**    
-- Local: The tool creates the first sequential component labeled "-101". It then generates the next available number. These components aren't saved; they are created for you to save if you are satisfied with the outcome. The journal searches through your library, session, and memory for the component name you have set, checking for available or missing numbers to avoid duplication. The names for the components will be created from the names of the solid bodies. If a solid body does not have anything assigned, the default name “Panel” will be used. You can change this later in the code. See the Guide folder for screenshots on how to rename your solid bodies.
+- Local: The tool creates the first sequential component labeled "-101". It then generates the next available number. These components aren't saved; they are created for you to save if you are satisfied with the outcome. The journal searches through your library, session, and memory for the component name you have set, checking for available or missing numbers to avoid duplication. The names for the components will be created from the names of the solid bodies. If a solid body does not have anything assigned, the default name “Panel” will be used. You can change this later in the code. See further down the Guide for the Component Creator Journal on how to rename your solid bodies.
 
 - Teamcenter: The tool employs a two-round approach to ensure each component is sequentially numbered and accurately tracked in Teamcenter. You can use both the first and second rounds or only the second, depending on your requirements. See the code for configuration examples.
 
@@ -256,6 +256,55 @@ MaterialThicknessAttribute As String = "MAT_THICKNESS"
 <td width="25%" style="text-align: center"><img src="https://github.com/lumberjack1970/EasyWeightforNX/assets/164236127/4a817b51-a180-491f-b76e-772ec76851de"></td>
 </tr>
 </table>
+
+-----
+
+## Guide for the Component Creator Journal
+
+To create proper Components, you need to name your solid bodies first.    
+Follow these steps before running the journal:    
+- Navigate to: **Part Navigator / Reference Sets / Model (by default) / Solid bodies**
+- You can rename the solid bodies here by slowly double-clicking on them.
+  
+![Component Creator - How to name Solid bodiessmall](https://github.com/lumberjack1970/EasyWeightforNX/assets/164236127/b67bf0b9-c793-4c3b-90fa-a2548d04292d)
+
+- To modify the default solid body name, locate this line in the journal and change "Panel" to "Whateveryoulike":
+
+```vbnet
+Dim defaultsolidbodyname As String = "PANEL" 
+```
+
+If you don't see the **Reference Sets** folder, go to:
+- **Customer Defaults / Gateway / Part Navigator / Display Reference Sets Folder**
+  
+![Component Creator - Display Reference sets Foldersmall](https://github.com/lumberjack1970/EasyWeightforNX/assets/164236127/af6218e1-b4c3-48cf-a517-c739bcc4283c)
+ 
+If you can't enable the **Reference Sets** folder:
+- Right-click on an empty area within the Part Navigator
+- Deselect **'Timestamp Order'** from the menu
+- This action will make the **Reference Sets** folder visible, allowing you to name the solid bodies.
+- Select a solid body and rename by slowly double-clicking on them    
+  or    
+- You can select more and Right-click on one of the selected bodies
+- Navigate to **Properties / General / Name**
+- Enter your desired name
+- If you see an **‘Apply to Work Part’** option under the name, it means you're in a different environment from the original. Make sure to select this option to apply the changes
+- After completing the naming process, return to the **Part Navigator**, right-click on an empty area once more, and re-select **‘Timestamp Order’** to revert the settings.
+
+![Component Creator - Timestamp Order to reveal Reference Sets Folder](https://github.com/lumberjack1970/EasyWeightforNX/assets/164236127/76bb8280-d259-4819-95f8-ec02a5a2b9b1)
+
+If you want to handle them in the graphics window:
+- Set your **Selection / Type filter** (selection scope) to **Solid Body**
+- Select the solid body / bodies you want to rename
+- Right-click on one of the selected bodies
+- Navigate to **Properties / General / Name**
+- Enter your desired name
+  
+![Component Creator - Selection Scope Settingsmall](https://github.com/lumberjack1970/EasyWeightforNX/assets/164236127/b60b98da-6dcc-46e4-a622-a7cdef87c340)
+
+That's all, young Padawans.     
+Let this wisdom guide you well on your path to mastery.    
+**And...May the Force be with you!**
 
 -----
 
