@@ -11,7 +11,7 @@ I recommend using Notepad++ or Visual Studio Code. To design icons, Krita is an 
 https://notepad-plus-plus.org/    
 https://krita.org/    
 
-1. Open any journal for editing. Don't worry, they are all in plain english with many comments on the know-how.
+1. Open any journal for editing. Don't worry, they have many comments on the know-how.
 2. At the beginning, you'll find a section labeled 'Configuration settings'.
 3. These settings allow you to easily change the main features without diving into the code. (Only modify the code directly if you really know what you're doing and couldn't find what you need.)
    
@@ -302,9 +302,6 @@ If you want to handle them in the graphics window:
   
 ![Component Creator - Selection Scope Settingsmall](https://github.com/lumberjack1970/EasyWeightforNX/assets/164236127/b60b98da-6dcc-46e4-a622-a7cdef87c340)
 
-That's all, young Padawans.     
-Let this wisdom guide you well on your path to mastery.    
-**May the Force be with you all!**
 
 -----
 
