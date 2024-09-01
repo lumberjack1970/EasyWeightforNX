@@ -6,7 +6,7 @@ an NX Study for Joinery Designers and others: Mastering Weight Management throug
 
 ## How to use
 
-If you're new to GitHub, scroll up a bit and you'll see a big 'Code' button with a distinct background (I'm using dark mode and it's green for me). Click on it and from the dropdown menu, select 'Download ZIP'. Unpack it to your folder.    
+If you're new to GitHub, scroll up a bit and you'll see a big **'Code'** button with a distinct background (I'm using dark mode and it's green for me). Click on it and from the dropdown menu, select **'Download ZIP'**. Unpack it to your folder.    
 Every journal can be easily customized to meet your preferences and are FREE forever for everyone!   
 I've shared all of them on reputable websites too - you'll find these in the [Thanks](#thanks) section at the bottom of the page. If you encounter any issues, feel free to reach out and ask your questions there.
 
