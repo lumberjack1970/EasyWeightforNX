@@ -146,15 +146,16 @@ Create custom icons using the colors you’ve chosen for better visual recogniti
   How to use:
 
 1. Create a New Material Library    
-Search the internet for "How to Create a New UG NX Material Library". Familiarize yourself with the following and create your own library as you like:
+Search the internet for "How to Create a New UG NX Material Library".    
+Watch the video (YT), familiarize yourself with the following and create your own library as you like:
    - Copy, create and modify materials with the "Assign Materials" function.
    - Export materials to a library and save it as an *.xml file.
 
-2. Establish Your Color System in NX    
+3. Establish Your Color System in NX    
 Navigate to **Menu → Preferences → Color Palette**.    
 Hover your mouse over any color to see its ID number, which you'll need later.
 
-3. Create a Journal for Each Material    
+4. Create a Journal for Each Material    
 Save as and start editing. At the beginning of the code, where the Configuration Settings appear, fill in the data you've previously gathered:
 
 ```vbnet
