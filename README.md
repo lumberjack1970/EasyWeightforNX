@@ -7,9 +7,10 @@ an NX Study for Joinery Designers and others: Mastering Weight Management throug
 ## How to use
 
 If you're new to GitHub, scroll up a bit and you'll see a big **'Code'** button with a distinct background (I'm using dark mode and it's green for me). Click on it and from the dropdown menu, select **'Download ZIP'**. Unpack it to your folder.    
-Every journal can be easily customized to meet your preferences. 
+
 I've shared all of them on reputable websites too - you'll find these in the [Thanks](#thanks) section at the bottom of the page. If you encounter any issues, feel free to reach out and ask your questions there.
 
+Every journal can be easily customized to meet your preferences. 
 I recommend using Notepad++ or Visual Studio Code. To design icons, Krita is an excellent choice. (any of these are free)    
 https://notepad-plus-plus.org/    
 https://krita.org/    
@@ -107,7 +108,8 @@ You can find this function under Drafting preferences / View / Workflow / Border
 
 * **Which should you use** - _EW_Material_12mm Plywood.vb_ **or** _NX_Material_12mm Plywood.vb_**?**
 
-It's important to understand that the Easyweight project originated from a straightforward concept: circumventing NX's limitations when using it without a material license, allowing for body modifications and the assignment of a material name. As the project evolved, I discovered that it was also possible to assign built-in materials, presenting you with two options. Ideally, I should deprecate the first one, but I've chosen to keep it because it represents the original concept — and I love its simple and elegant solution to such limitations. The choice is ultimately yours, but I encourage you to develop your own built-in material library and use the second - **associative** - option. Every subsequent journal is prepared to accept either one or has an alternative.
+It's important to understand that the Easyweight project originated from a straightforward concept: circumventing NX's limitations when using it without a material license, allowing for body modifications and the assignment of a material name. As the project evolved, I discovered that it was also possible to assign built-in materials, presenting you with two options. Ideally, I should deprecate the first one, but I've chosen to keep it because it represents the original concept — and I love its simple and elegant solution to such limitations. The choice is ultimately yours, but I encourage you to develop your own built-in material library and use the second - **associative** - option. Every subsequent journal is prepared to accept either one or has an alternative.    
+You will find 3 example files to start with for each version (Stainless Steel, Fabric and 12mm Plywood).
                            
 ### EW_Material_12mm Plywood.vb
 
@@ -147,7 +149,7 @@ Create custom icons using the colors you’ve chosen for better visual recogniti
 
 1. Create a New Material Library    
 Search the internet for "How to Create a New UG NX Material Library".    
-Watch the video (YT), familiarize yourself with the following and create your own library as you like:
+Watch the video (YT - not my video, so feel free to support the Creator), familiarize yourself with the following and create your own library as you like:
    - Copy, create and modify materials with the "Assign Materials" function.
    - Export materials to a library and save it as an *.xml file.
 
@@ -175,7 +177,7 @@ Create custom icons using the colors you’ve chosen for better visual recogniti
 ### Captain Hook's Component Creator
 
 **Under the Hood**    
-- Local: The tool creates the first sequential component labeled "-101". It then generates the next available number. These components aren't saved; they are created for you to save if you are satisfied with the outcome. The journal searches through your library, session, and memory for the component name you have set, checking for available or missing numbers to avoid duplication. The names for the components will be created from the names of the solid bodies. If a solid body does not have anything assigned, the default name “Panel” will be used. You can change this later in the code. See further down the Guide for the Component Creator Journal on how to rename your solid bodies.
+- Local: The tool creates the first sequential component labeled "-101" (This can be changed to your requirement eg. -001 in the configuration settings). It then generates the next available number. These components aren't saved; they are created for you to save if you are satisfied with the outcome. The journal searches through your library, session, and memory for the component name you have set, checking for available or missing numbers to avoid duplication. The names for the components will be created from the names of the solid bodies. If a solid body does not have anything assigned, the default name “Panel” will be used (You can change this too in the configuration settings). See further down the Guide for the Component Creator Journal on how to rename your solid bodies.
 
 - Teamcenter: The tool employs a two-round approach to ensure each component is sequentially numbered and accurately tracked in Teamcenter. You can use both the first and second rounds or only the second, depending on your requirements. See the code for configuration examples.
 
@@ -212,13 +214,16 @@ fillTheGap As Boolean = True
 ### Lord Voldemort's Dimensions Tool - Length, Width And Material Thickness
 
 **Under the Hood**
-- Component Analysis: The script iterates through all components in the main assembly, including subassemblies, calculating the dimensions of each component. It intelligently handles duplicated components by skipping them.
-- Bounding Box Calculation: For the designated body, the script will attempt to determine its width, depth, and height. The body doesn't have to be aligned with the absolute coordinate system. The process involves generating a non-aligned minimum bounding box, selecting the first vertex on it, iterating through the edges that share a common point with this vertex, and then measuring these three edges. Initially tries to determine the material thickness using the pre-set values. If it fails to find a match, the smallest value will be assigned. The longest edge will then be designated as the 'Length' and the remaining edge in the group will be identified as the 'Width'.
+- V109 - Component Analysis: The script iterates through all components in the main assembly, including subassemblies, calculating the dimensions of each component. It intelligently handles duplicated components by skipping them.
+  
+   **Solid Body Requirements:**
+   - If the body is on Layer 1, it will be processed.
+   - If on any layer other than Layer 1, it will be skipped.
+   - If multiple bodies are on Layer 1, the script will skip the component.
 
-**Solid Body Requirements:**
-- If the body is on Layer 1, it will be processed.
-- If on any layer other than Layer 1, it will be skipped.
-- If multiple bodies are on Layer 1, the script will skip the component.
+- V309 - Solid Body Analysis: The script iterates through all selected solid bodies, calculating and attributing the dimensions of each. Created for a lost soul on Eng-Tips.com
+
+- Bounding Box Calculation: For the designated body, the script will attempt to determine its width, depth, and height. The body doesn't have to be aligned with the absolute coordinate system. The process involves generating a non-aligned minimum bounding box, selecting the first vertex on it, iterating through the edges that share a common point with this vertex, and then measuring these three edges. Initially tries to determine the material thickness using the pre-set values. If it fails to find a match, the smallest value will be assigned. The longest edge will then be designated as the 'Length' and the remaining edge in the group will be identified as the 'Width'.
 
 **Features**
 - User Interaction: A form interface allows for manual adjustments to dimensions and to change grain direction.
