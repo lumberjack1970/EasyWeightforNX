@@ -1,26 +1,36 @@
-# This project has been archived
+# Project Archived
 
-It’s been nearly 2 years since I first published these codes... but maybe one day it will come back as Version 2 with the following improvements:
+It’s been nearly 2 years since I first published these codes.    
+This little project started as a simple idea to make my design work faster and easier - and thanks to all of you, it grew way beyond what I expected.
+
+For now, I'm officially archiving this, but maybe one day it will come back as Version 2 with the following improvements like:
 
 1. Material management in one window (similar to NX native)
-2. CYS alignment option for the Dimensions tool
+2. Coordinate System alignment option for the Dimensions Tool
 3. Naming interface for the Component Creator
 
-I’d like to say thank you to all of you who gave me new ideas, recommendations and questions during this project’s lifetime - they helped a lot to reach its final state.
+If you starred the project - you are a star too! ⭐ Those really help with credibility and makes the project shine!   
+And here are some messages from you - they truly warmed up my soul and kept me going - Thank you!:   
 
-If you starred the project - you are a star too! ⭐ Those really help with credibility.   
-And here are some messages from you - they truly warmed up my soul - Thank you!:
+>*„Hello, dear colleague! Your work is awesome and super useful. Thanks a million for sharing it!”*   
 
-*“I’ve been on eng tips for must be .. almost 20 years, learned a LOT off generous helpful people..your stuff is the best work I’ve seen… ( straight up)”*
+>*“I’ve been on eng tips for must be .. almost 20 years, learned a LOT off generous helpful people..your stuff is the best work I’ve seen… ( straight up)”*   
 
-*„WOW, this is SOOoo good, exactly what I'm after (& more), thanks for sharing such great work with the NX community.”*
+>*„WOW, this is SOOoo good, exactly what I'm after (& more), thanks for sharing such great work with the NX community.”*   
 
-*„Hello, dear colleague! Your work is awesome and super useful. Thanks a million for sharing it!”*
+>*„this is "bloody brilliant"”*   
 
-*„this is "bloody brilliant"”*
+>*“I just want to tank you for sharing your code with the world. I'm using your dimension tool and it just saved my week. Thanks!”*   
 
-*“I just want to tank you for sharing your code with the world. I'm using your dimension tool and it just saved my week. Thanks!”*
+**Downloaded by over 3,000 users worldwide ❤️**
 
+I’ve learned a lot, and one day I’d love to come back with something even stronger.
+
+Until then: keep building, keep sharing, and maybe we’ll meet again!
+
+Tom
+   
+---
 
 # Easy Material Weight Management for Siemens NX
 
