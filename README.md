@@ -364,5 +364,5 @@ And to ChatGPT, for advising and debugging the codes alongside me as my constant
 - Full text: [LICENSE.md](./LICENSE.md)  
 - See [DISCLAIMER.md](./DISCLAIMER.md) for additional terms.  
 
-**Note:** License and disclaimer added in 2025 for clarity. Applies to all current and future use of this repository.
+**Note:** License and disclaimer added in 2025 for clarity. Applies to all current and future use of this repository.   
 Copyright (c) 2025 **Tamas Woller**  
