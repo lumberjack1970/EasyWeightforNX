@@ -1,6 +1,6 @@
 # Project Archived (for now)
 
-This project was first published nearly 2 years ago and has been downloaded by over **3,000 users worldwide**.  
+This bulletproof project was first published nearly 2 years ago and has been downloaded by over **3,000 users worldwide**.  
 I’m officially archiving it for now, but may return with a **Version 2** in the future.  
 
 Thank you to everyone who used, starred ⭐ and supported this work!   
@@ -9,7 +9,7 @@ Thank you to everyone who used, starred ⭐ and supported this work!
 
 ## 🌟 Community & Feedback
 
-This little project started as a simple idea to make my design work faster and easier - to automatize every boring step during my day - and thanks to all of you, it grew way beyond what I expected.  
+It started as a simple idea to make my design work faster and easier - to automatize every boring step during my day - and thanks to all of you, it grew way beyond what I expected.  
 
 
 If I ever return with V2, it will come back with the following improvements like:  
@@ -360,7 +360,7 @@ To [NXJournaling.com](https://www.nxjournaling.com/content/easy-material-weight-
 And to ChatGPT, for advising and debugging the codes alongside me as my constant companion throughout this journey.
 
 ## License & Disclaimer
-- This project is licensed under **CC BY-NC 4.0** (non-commercial use, attribution required).  
+- This project is licensed under the **MIT License** – free to use, adapt, and share with attribution.  
 - Full text: [LICENSE.md](./LICENSE.md)  
 - See [DISCLAIMER.md](./DISCLAIMER.md) for additional terms.  
 
