@@ -1,17 +1,23 @@
-# Project Archived
+# Project Archived (for now)
 
-It’s been nearly 2 years since I first published these codes.    
-This little project started as a simple idea to make my design work faster and easier - and thanks to all of you, it grew way beyond what I expected.
+This project was first published nearly 2 years ago and has been downloaded by over **3,000 users worldwide**.  
+I’m officially archiving it for now, but may return with a **Version 2** in the future.  
 
-For now, I'm officially archiving this, but maybe one day it will come back as Version 2 with the following improvements like:
+Thank you to everyone who used, starred ⭐ and supported this work!   
 
-1. Material management in one window (similar to NX native)
-2. Coordinate System alignment option for the Dimensions Tool
-3. Naming interface for the Component Creator
+---
 
-If you starred the project - you are a star too! ⭐ Those really help with credibility and makes the project shine!   
-And here are some messages from you - they truly warmed up my soul and kept me going - Thank you!:   
+## 🌟 Community & Feedback
 
+This little project started as a simple idea to make my design work faster and easier - to automatize every boring step during my day - and thanks to all of you, it grew way beyond what I expected.  
+
+
+If I ever return with V2, it will come back with the following improvements like:  
+- Material management in one window (similar to NX native)  
+- Coordinate System alignment option for the Dimensions Tool  
+- Naming interface for the Component Creator  
+
+### 💬 What you’ve said  
 >*„Hello, dear colleague! Your work is awesome and super useful. Thanks a million for sharing it!”*   
 
 >*“I’ve been on eng tips for must be .. almost 20 years, learned a LOT off generous helpful people..your stuff is the best work I’ve seen… ( straight up)”*   
@@ -22,12 +28,11 @@ And here are some messages from you - they truly warmed up my soul and kept me g
 
 >*“I just want to tank you for sharing your code with the world. I'm using your dimension tool and it just saved my week. Thanks!”*   
 
-**Downloaded by over 3,000 users worldwide ❤️**
+I’ve learned a lot, and one day I’d love to come back with something even stronger.  
 
-I’ve learned a lot, and one day I’d love to come back with something even stronger.
+Until then: **keep building, keep sharing, and maybe we’ll meet again!**  
 
-Until then: keep building, keep sharing, and maybe we’ll meet again!
-
+Yours truly,    
 Tom
    
 ---
@@ -183,7 +188,7 @@ Create custom icons using the colors you’ve chosen for better visual recogniti
 
 1. Create a New Material Library    
 Search the internet for "How to Create a New UG NX Material Library".    
-Watch the video (YT - not my video, so feel free to support the Creator), familiarize yourself with the following and create your own library as you like:
+Watch the video (YT - not mine, so feel free to support the Creator), familiarize yourself with the following and create your own library as you like:
    - Copy, create and modify materials with the "Assign Materials" function.
    - Export materials to a library and save it as an *.xml file.
 
@@ -351,4 +356,12 @@ If you want to handle them in the graphics window:
 # Thanks
 
 To [NXJournaling.com](https://www.nxjournaling.com/content/easy-material-weight-management-part-1) and [Eng-Tips.com](https://www.eng-tips.com/viewthread.cfm?qid=514995) [2](https://www.eng-tips.com/viewthread.cfm?qid=516555) [3](https://www.eng-tips.com/viewthread.cfm?qid=518413) for providing invaluable examples, insightful comments, and educational content.   
+
 And to ChatGPT, for advising and debugging the codes alongside me as my constant companion throughout this journey.
+
+## License & Disclaimer
+- This project is licensed under **CC BY-NC 4.0** (non-commercial use, attribution required).  
+- Full text: [LICENSE.md](./LICENSE.md)  
+- See [DISCLAIMER.md](./DISCLAIMER.md) for additional terms.  
+
+**Note:** License and disclaimer added in 2025 for clarity. Applies to all current and future use of this repository.
